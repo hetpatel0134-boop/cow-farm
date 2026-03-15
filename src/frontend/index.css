@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/assets/fonts/Fraunces.woff2') format('woff2');
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('/assets/fonts/Figtree.woff2') format('woff2');
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Warm parchment background */
+    --background: 0.97 0.015 85;
+    --foreground: 0.2 0.04 50;
+
+    /* Card: slightly off-white with warmth */
+    --card: 0.99 0.008 90;
+    --card-foreground: 0.2 0.04 50;
+
+    --popover: 0.99 0.008 90;
+    --popover-foreground: 0.2 0.04 50;
+
+    /* Primary: deep forest green */
+    --primary: 0.42 0.13 145;
+    --primary-foreground: 0.98 0.008 90;
+
+    /* Secondary: light sage green */
+    --secondary: 0.88 0.05 135;
+    --secondary-foreground: 0.25 0.06 140;
+
+    /* Muted: light warm tan */
+    --muted: 0.93 0.015 85;
+    --muted-foreground: 0.5 0.03 70;
+
+    /* Accent: warm amber/clay */
+    --accent: 0.82 0.08 75;
+    --accent-foreground: 0.25 0.06 55;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 0;
+
+    --border: 0.85 0.03 80;
+    --input: 0.88 0.025 82;
+    --ring: 0.42 0.13 145;
+
+    --chart-1: 0.55 0.15 145;
+    --chart-2: 0.62 0.12 60;
+    --chart-3: 0.45 0.1 200;
+    --chart-4: 0.7 0.14 95;
+    --chart-5: 0.5 0.18 30;
+
+    --sidebar: 0.94 0.025 85;
+    --sidebar-foreground: 0.2 0.04 50;
+    --sidebar-primary: 0.42 0.13 145;
+    --sidebar-primary-foreground: 0.98 0.008 90;
+    --sidebar-accent: 0.88 0.05 135;
+    --sidebar-accent-foreground: 0.25 0.06 140;
+    --sidebar-border: 0.85 0.03 80;
+    --sidebar-ring: 0.42 0.13 145;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* Farm texture overlay */
+.farm-pattern {
+  background-image:
+    radial-gradient(circle at 20% 80%, oklch(0.42 0.13 145 / 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, oklch(0.65 0.12 60 / 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, oklch(0.55 0.08 80 / 0.03) 0%, transparent 70%);
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px oklch(0.42 0.13 145 / 0.15);
+}
